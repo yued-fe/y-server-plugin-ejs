@@ -1,0 +1,26 @@
+{
+  "name": "y-server-plugin-ejs",
+  "version": "0.0.1",
+  "author": "SmadeyZhang",
+  "license": "MIT",
+  "description": "y-server ejs engine plugin",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yued-fe/y-server-plugin-ejs.git"
+  },
+  "scripts": {
+    "test": "y-server --config ./test/y-server.config.js --hot"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "ejs": "^2.5.7"
+  },
+  "devDependencies": {
+    "y-server": "~0.0.2"
+  }
+}
