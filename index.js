@@ -56,7 +56,7 @@ module.exports = function (options) {
 
         renderAdapter(data, req, res).then(function (data) {
           console.log('[页面渲染]'.blue, `"${req.path}" => "${viewPath}"`);
-          originRender.call(res, viewPath, data, callback)
+          originRender.call(res, viewPath, data, callback);
         });
       };
 
