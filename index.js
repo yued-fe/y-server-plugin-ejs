@@ -54,10 +54,18 @@ module.exports = function (options) {
           data = {};
         }
 
-        renderAdapter(data, req, res).then(function (data) {
-          console.log('[页面渲染]'.blue, `"${req.path}" => "${viewPath}"`);
-          originRender.call(res, viewPath, data, callback);
-        });
+        const render = function (data) {
+          renderAdapter(data, req, res).then(function (data) {
+            console.log('[页面渲染]'.blue, `"${req.path}" => "${viewPath}"`);
+            originRender.call(res, viewPath, data, callback);
+          });
+        };
+
+        if (res.mock) {
+          res.mock(data).then(render);
+        } else {
+          render(data);
+        }
       };
 
       next();
